@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: 123PAY.IR - Restrict Content Pro
- * Description: پلاگین پرداخت، سامانه پرداخت اینترنتی یک دو سه پی برای Restrict Content Pro
+ * Description: پلاگین پرداخت، سامانه پرداخت یک دو سه پی برای Restrict Content Pro
  * Plugin URI: https://123pay.ir
  * Author: تیم فنی یک دو سه پی
  * Author URI: http://123pay.ir
@@ -35,11 +35,11 @@ if ( ! class_exists( 'RCP__123pay' ) ) {
 			global $rcp_options;
 
 			if ( version_compare( RCP_PLUGIN_VERSION, '2.1.0', '<' ) ) {
-				$gateways['_123pay'] = isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت اینترنتی یک دو سه پی', 'rcp__123pay' );
+				$gateways['_123pay'] = isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت یک دو سه پی', 'rcp__123pay' );
 			} else {
 				$gateways['_123pay'] = array(
-					'label'       => isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت اینترنتی یک دو سه پی', 'rcp__123pay' ),
-					'admin_label' => isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت اینترنتی یک دو سه پی', 'rcp__123pay' ),
+					'label'       => isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت یک دو سه پی', 'rcp__123pay' ),
+					'admin_label' => isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت یک دو سه پی', 'rcp__123pay' ),
 				);
 			}
 
@@ -52,7 +52,7 @@ if ( ! class_exists( 'RCP__123pay' ) ) {
             <table class="form-table">
 				<?php do_action( 'RCP__123pay_before_settings', $rcp_options ); ?>
                 <tr valign="top">
-                    <th colspan=2><h3><?php _e( 'تنظیمات سامانه پرداخت اینترنتی یک دو سه پی', 'rcp__123pay' ); ?></h3>
+                    <th colspan=2><h3><?php _e( 'تنظیمات سامانه پرداخت یک دو سه پی', 'rcp__123pay' ); ?></h3>
                     </th>
                 </tr>
                 <tr valign="top">
@@ -85,7 +85,7 @@ if ( ! class_exists( 'RCP__123pay' ) ) {
                     <td>
                         <input class="regular-text" id="rcp_settings[_123pay_name]" style="width: 300px;"
                                name="rcp_settings[_123pay_name]"
-                               value="<?php echo isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت اینترنتی یک دو سه پی', 'rcp__123pay' ); ?>"/>
+                               value="<?php echo isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت یک دو سه پی', 'rcp__123pay' ); ?>"/>
                     </td>
                 </tr>
                 <tr valign="top">
@@ -183,7 +183,7 @@ if ( ! class_exists( 'RCP__123pay' ) ) {
 
 				$subscription_id = rcp_get_subscription_id( $user_id );
 				$user_data       = get_userdata( $user_id );
-				$payment_method  = isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت اینترنتی یک دو سه پی', 'rcp__123pay' );
+				$payment_method  = isset( $rcp_options['_123pay_name'] ) ? $rcp_options['_123pay_name'] : __( 'سامانه پرداخت یک دو سه پی', 'rcp__123pay' );
 
 				if ( ! $user_data || ! $subscription_id || ! rcp_get_subscription_details( $subscription_id ) ) {
 					return;
