@@ -128,7 +128,7 @@ if ( ! class_exists( 'RCP__123pay' ) ) {
 
 			$merchant_id  = $rcp_options['_123pay_merchant_id'];
 			$amount       = $Price;
-			$callback_url = $ReturnPath;
+			$callback_url = urlencode( $ReturnPath );
 
 			$ch = curl_init();
 			curl_setopt( $ch, CURLOPT_URL, 'https://123pay.ir/api/v1/create/payment' );
