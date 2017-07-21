@@ -105,8 +105,8 @@ if ( ! class_exists( 'RCP_ir123pay' ) ) {
 		public function ir123pay_Request( $subscription_data ) {
 			global $rcp_options;
 			ob_start();
-			$query                = isset( $rcp_options['ir123pay_query_name'] ) ? $rcp_options['ir123pay_query_name'] : 'ir123pay';
-			$amount               = str_replace( ',', '', $subscription_data['price'] );
+			$query                 = isset( $rcp_options['ir123pay_query_name'] ) ? $rcp_options['ir123pay_query_name'] : 'ir123pay';
+			$amount                = str_replace( ',', '', $subscription_data['price'] );
 			$ir123pay_payment_data = array(
 				'user_id'           => $subscription_data['user_id'],
 				'subscription_name' => $subscription_data['subscription_name'],
@@ -117,7 +117,7 @@ if ( ! class_exists( 'RCP_ir123pay' ) ) {
 			$_ir123pay_session = IR123PAY_Session::get_instance();
 			@session_start();
 			$_ir123pay_session['ir123pay_payment_data'] = $ir123pay_payment_data;
-			$_SESSION["ir123pay_payment_data"]         = $ir123pay_payment_data;
+			$_SESSION["ir123pay_payment_data"]          = $ir123pay_payment_data;
 			do_action( 'RCP_Before_Sending_to_ir123pay', $subscription_data );
 			if ( $rcp_options['currency'] == 'تومان' || $rcp_options['currency'] == 'TOMAN' || $rcp_options['currency'] == 'تومان ایران' || $rcp_options['currency'] == 'Iranian Toman (&#65020;)' ) {
 				$amount = $amount * 10;
@@ -242,7 +242,7 @@ if ( ! class_exists( 'RCP_ir123pay' ) ) {
 					$GLOBALS['ir123pay_subscription_key'] = $subscription_key;
 					$GLOBALS['ir123pay_fault']            = $fault;
 					global $ir123pay_transaction;
-					$ir123pay_transaction                             = array();
+					$ir123pay_transaction                              = array();
 					$ir123pay_transaction['ir123pay_payment_status']   = $payment_status;
 					$ir123pay_transaction['ir123pay_transaction_id']   = $transaction_id;
 					$ir123pay_transaction['ir123pay_subscription_key'] = $subscription_key;
@@ -361,7 +361,7 @@ if ( ! class_exists( 'RCP_ir123pay' ) ) {
 				);
 
 				$_ir123pay_session['ir123pay_data'] = $ir123pay_data;
-				$_SESSION["ir123pay_data"]         = $ir123pay_data;
+				$_SESSION["ir123pay_data"]          = $ir123pay_data;
 			} else {
 				if ( isset( $_ir123pay_session['ir123pay_data'] ) ) {
 					$ir123pay_payment_data = $_ir123pay_session['ir123pay_data'];
